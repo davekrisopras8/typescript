@@ -16,23 +16,43 @@ founderAndSoftwareEngineer = true;
 let hobbies: string[];
 hobbies = ["Coding", "Sports"];
 
-let person: {
+type Person = {
   name: string;
   age: number;
 };
+
+let person: Person;
+
 person = {
   name: "Dave",
   age: 17,
 };
 
-let people: {
-  name: string;
-  age: number;
-}[];
+let people: Person[];
 
 // Type inference
-let job = 'Tech Lead'
+let job = "Tech Lead";
 // job = 12345
 
 // Union Types
-let you: string | number = 'Dave Krisopras Essanto'
+let you: string | number = "Dave Krisopras Essanto";
+
+// Functions and Types
+function add(a: number, b: number) {
+  return a + b
+}
+
+function print(value: any) {
+  console.log(value)
+}
+
+// Generics
+function insertAtBeginning<T>(array: T[], value: T) {
+  const newArray = [value, ...array]
+  return newArray
+}
+
+const demoArray = [1,2,3]
+const updatedArray = insertAtBeginning(demoArray, -1)
+const stringArray = insertAtBeginning(['a', 'b', 'c'], 'd')
+// updatedArray[0].split('')

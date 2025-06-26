@@ -1,10 +1,15 @@
-import Todos from "./components/Todos";
+import { Todos } from "./components/Todos";
+import { NewTodo } from "./components/NewTodo";
+import { TodosProvider } from "./store/TodosContext";
 
 function App() {
   return (
-    <>
-      <Todos />
-    </>
+    <TodosProvider>
+      <main>
+        <NewTodo />
+        <Todos />
+      </main>
+    </TodosProvider>
   );
 }
 
